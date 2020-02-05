@@ -1,0 +1,72 @@
+    input, select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #87CEEB;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+
+    input[type=submit]:hover {
+        background-color: #1E90FF;
+        }
+
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        }
+            
+    #menu {       
+        list-style-type: none;
+        margin: 0;      
+        padding: 0.5%;      
+        overflow: hidden;
+        float: left;
+        background-color: #87CEEB;
+        width: 99%;
+    }
+   
+    li {
+        color: white;
+        font-size: 20%; 
+        text-align: center;
+    }
+    
+    li a {
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+    }
+
+            
+    .intro {
+        display: block;
+        color: white;
+        float: left;
+        font-size: 110%;
+    }
+    
+    *{
+        font-family: 'Courier New'; 
+        text-align: center;          
+    }
+
+    h1{
+        font-size: 190%;
+        font-style: normal;
+        color: #708090;
+    }

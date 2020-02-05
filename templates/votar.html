@@ -1,0 +1,54 @@
+<!DOCTYPE html><!--tag padrão-->
+<html lang="pt-br"><!-- abertura da tag html, definindo a lingua como português do Brasil -->
+<head><!-- abertura do head-->
+    <title>Ballot - Votar</title><!-- título da página -->
+    <meta charset="uft-8"><!-- tag para reconhecer os acentos -->
+    <link rel="icon" href="/static/imagem/iconvote1.png" type="image/png" /><!-- define imagem para ícone das abas de navegação -->
+    <link rel="stylesheet" type="text/css" href="static/ballot.css"><!-- define o css, conecta com a página -->
+    <!-- início do css interno -->
+    <style>
+    
+    #menu {       
+        list-style-type: none;
+        margin: 0;      
+        padding: 0.5%;      
+        overflow: hidden;
+        float: left;
+        background-color: #87CEEB;
+        width: 99%;
+    }
+    </style><!-- fim do css interno -->
+</head> <!-- fim do head -->
+<body><!-- início do body -->
+    <ul id="menu"><!-- início da lista não ordenada -->
+	    <a href="/"><img src= "static/imagem/iconvote1.png" style="width: 60px; height: 60px; float: left;"></a><!-- link para a página inicial -->
+        <li class="intro" ><a class="intro" href="/ver_ranking">Ranking</a></li><!-- item da lista com um link dentro -->
+        <li class="intro" ><a class="intro" href="/form_criar_votacao">Criar Votação</a></li>
+
+        {%if usuario %}<!--início do if, entra aqui se o user estiver logado-->
+            <p></p>
+        {%else%}<!--entra aqui se não estiver logado-->
+            <li class="intro" ><a class="intro" href="/form_cadastrar">Efetuar Cadastro</a></li>
+        {%endif%}<!--fim do if-->
+
+    </ul> <!-- fim da lista não ordenada --> 
+    <br> <!-- espaço -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>VOTE</h1><!--título da página-->
+    <br>
+    <br>
+    <div>
+    <form action="/pagina_votacao" method="post">
+        <label for="codV" method="post">Código da votação:</label>
+        <input id="codV" name="codV" type="text" placeholder="A0A0A0P">
+        <input type="submit" value="Acessar votação">
+    </form>
+    
+    <p style="text-align: center; font-size: 85%; ">Copyright 2019. All Rights Reserved. Powered by Ballot.</p>
+</div>
+</body>
+</html>

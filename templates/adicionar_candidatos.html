@@ -1,0 +1,84 @@
+<!DOCTYPE html> <!--tag padrão-->
+<html lang="pt-br"> <!-- abertura da tag html, definindo a lingua como português do Brasil -->
+<head> <!-- abertura do head-->
+    <title>Ballot - Criar Votação</title> <!-- título da página -->
+    <meta charset="uft-8"> <!-- tag para reconhecer os acentos -->
+    <link rel="icon" href="static/imagem/iconvote1.png" type="image/png" /> <!-- define imagem para ícone das abas de navegação -->
+    <link rel="stylesheet" type="text/css" href="static/ballot.css"> <!-- define o css, conecta com a página -->
+    <!-- início do css interno -->
+    <style> 
+        #menu {       
+            list-style-type: none;
+            margin: 0;      
+            padding: 0.5%;      
+            overflow: hidden;
+            float: left;
+            background-color:#87CEEB;
+            width: 99%;
+        }
+        #Bsalvar{
+            background-color: rgb(135, 235, 148);
+        
+        }
+        #Bsalvar:hover{
+            background-color: rgb(135, 255, 30);
+        }
+        #Breiniciar{
+            background-color: rgb(235, 135, 135);
+        }
+        #Breiniciar:hover{
+            background-color: rgb(235, 30, 30);
+        }
+    </style> <!-- fim do css interno -->
+</head> <!-- fim do head -->
+
+<body> <!-- início do body -->
+    <ul id="menu"> <!-- início da lista não ordenada -->
+        <a href="/voltar"><img src= "static/imagem/iconvote1.png" style="width: 60px; height: 60px; float: left;"></a> <!-- link para a página inicial -->
+        <li class="intro" ><a class="intro" href="/ver_ranking" >Ranking</a></li> <!-- item da lista com um link dentro -->                
+        <li class="intro" ><a class="intro" href="/votar" >Votar</a></li>
+        <li class="intro" ><a class="intro" href="/form_criar_votacao" >Criar Votação</a></li>
+    </ul> <!-- fim da lista não ordenada --> 
+    <br> <!-- espaço -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Adicionar candidatos</h1> <!-- Título da página -->
+    <br>
+    <br>
+    {%for i in range(ncandidatos):%} <!-- início do laço de repetição -->
+        <hr> <!-- risco que separa blocos-->
+        <br>
+        <br>
+        <form action="/salvar_candidatos"> <!-- início do formulário, que irá direcionar as informações obtidas para a rota salvar_candidatos-->
+            <label for="candum">Candidato {{i + 1}}:</label> <!-- linha com o número do candidato, resultante do laço de repetição -->
+            <input type="text" id="candum" name="cand{{i+1}}" value="cand{{i+1}}" placeholder="Batata frita" required> <!-- caixa de texto -->
+	        <br>
+            <br>
+            <label for="candum"> Foto Candidato {{i + 1}}:</label>
+            <input type="file" name="fotocandidato{{i+1}}" required><!-- input do tipo de carregar arquivo -->
+            <br>
+            <br>
+            <br>
+            <label for="candum"> Descrição Candidato {{i + 1}}:</label>
+            <textarea rows="4" cols="35" name=descricao{{i+1}} required> Comente aqui algo sobre o candidato </textarea><!-- caixa de texto que expande -->
+            <br>
+            <br>
+            <br>
+            <br>
+            {%endfor%}<!-- fim do laço de repetição -->
+            <input id="Bsalvar" type="submit" value="Salvar candidatos"><!-- botão que envia os dados -->
+        </form> <!-- fim fo formulário -->
+        <form action="/soma"><!-- início do formulário que direcionará para a rota de adicionará mais um candidato -->
+            <input type="submit" value="Adicionar Candidato"><!-- botão que envia executa a ação -->
+        </form><!-- fim do formulário -->
+        <form action="/resetar"><!-- início do formulário que direcionará para a rota que voltará para a contagem de candidatos inicial -->
+            <input id="Breiniciar" type="submit" value="Reiniciar o número de candidatos">
+        </form><!-- fim do formulário -->
+    
+        <p style="text-align: center; font-size: 85%; ">Copyright 2019. All Rights Reserved. Powered by Ballot.</p><!-- parágrafo -->
+    
+</body><!-- fim do body -->
+</html><!-- fim do html -->

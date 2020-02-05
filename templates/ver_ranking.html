@@ -1,0 +1,35 @@
+<!DOCTYPE html><!--tag padrão-->
+<html lang="pt-br"><!-- abertura da tag html, definindo a lingua como português do Brasil -->
+<head><!-- abertura do head-->
+    <title>Ballot - Ranking</title><!--título da página-->
+    <meta charset="uft-8"><!-- tag para reconhecer os acentos -->
+    <link rel="icon" href="static/imagem/iconvote1.png" type="image/png" /><!-- define imagem para ícone das abas de navegação -->
+    <link rel="stylesheet" type="text/css" href="static/ballot.css"><!-- define o css, conecta com a página -->
+    <!-- início do css interno -->
+    <style>
+        #menu {       
+            list-style-type: none;
+            margin: 0;      
+            padding: 0.5%;      
+            overflow: hidden;
+            float: left;
+            background-color: #87CEEB;
+            width: 99%;
+        }
+    </style><!-- fim do css interno -->
+</head> <!-- fim do head -->
+<body><!-- início do body -->
+    <ul id="menu">  <!-- início da lista não ordenada -->
+    <a href="/"><img src= "static/imagem/iconvote1.png" style="width: 60px; height: 60px; float: left;"></a><!-- link para a página inicial -->
+        <li class="intro" ><a class="intro" href="/votar">Votar</a></li><!-- item da lista com um link dentro -->
+        <li class="intro" ><a class="intro" href="/form_criar_votacao">Criar Votação</a></li>
+
+        {%if usuario == True%}<!-- se o usuario estiver conectado, entra no if -->
+            <p></p><!-- coloca um paragrafo na pagina -->
+        {%else%}<!-- se o usuario não estiver conectado -->
+            <li class="intro" ><a class="intro" href="/form_cadastrar">Efetuar Cadastro</a></li><!-- item da lista com um link dentro -->
+        {%endif%}<!-- fim do if -->
+
+    </ul>  <!-- fim da lista não ordenada -->
+</body><!-- fim do body -->
+</html><!-- fim do html -->
